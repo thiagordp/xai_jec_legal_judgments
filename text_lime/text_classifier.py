@@ -1,37 +1,24 @@
 import glob
 import logging
-import random
 
-import lime
 import nltk
 import pandas as pd
 import sklearn
-import numpy as np
-import sklearn
 import sklearn.ensemble
 import sklearn.metrics
-import tqdm
+from lime.lime_text import LimeTextExplainer
 from matplotlib import pyplot as plt
+from nltk.corpus import stopwords
 from sklearn import metrics
-
-from sklearn.datasets import fetch_20newsgroups
-from sklearn.ensemble import RandomForestClassifier
-from lime import lime_text
 from sklearn.model_selection import train_test_split
 from sklearn.neural_network import MLPClassifier
 from sklearn.pipeline import make_pipeline
 
-from lime.lime_text import LimeTextExplainer
-from nltk.corpus import stopwords
-
 nltk.download('stopwords')
-from nltk.tokenize import word_tokenize
 
 DATASET_LABEL_PRESO = "/media/trdp/Arquivos/Studies/dev_msc/Datasets/stf_hc_dataset/Preso/"
 DATASET_LABEL_SOLTO = "/media/trdp/Arquivos/Studies/dev_msc/Datasets/stf_hc_dataset/Solto/"
 DATASET_LABEL_PROC = "/media/trdp/Arquivos/Studies/dev_msc/Datasets/processos_transp_aereo/txts_atualizados_sd_manual/novos/"
-
-
 
 
 def process_text(text):
@@ -169,8 +156,7 @@ def train_predict_rf(newsgroups_train, newsgroups_test, labels_train, labels_tes
     return rf
 
 
-def legal_clf():
-
+def legal_text_lime():
     load_jec_data()
 
     logging.info("Starting")

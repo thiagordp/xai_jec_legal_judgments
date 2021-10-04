@@ -1,7 +1,9 @@
 """
 
 """
-from text_lime.text_classifier import legal_clf
+import logging
+
+from text_lime.text_classifier import legal_text_lime
 
 
 def setup_logging():
@@ -15,9 +17,10 @@ def setup_logging():
     console.setFormatter(formatter)
     logging.getLogger().addHandler(console)
 
+
 def main():
     setup_logging()
-    legal_clf()
+    legal_text_lime()
 
 
 if __name__ == '__main__':
