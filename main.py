@@ -3,7 +3,8 @@
 """
 import logging
 
-from text_lime.text_classifier import legal_text_lime
+from data_processing import process_attrib
+from tabular_lime.jec_tabular_regression import jec_lime_regression
 
 
 def setup_logging():
@@ -20,7 +21,9 @@ def setup_logging():
 
 def main():
     setup_logging()
-    legal_text_lime()
+    # legal_text_lime()
+    #process_attrib()
+    jec_lime_regression()
 
 
 if __name__ == '__main__':
