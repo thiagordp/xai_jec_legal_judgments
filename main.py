@@ -4,7 +4,10 @@
 import logging
 
 from data_processing import process_attrib
+from tabular_dice.jec_tabular_dice import jec_dice, example_dice, jec_dice_2
 from tabular_lime.jec_tabular_regression import jec_lime_regression
+from tabular_shap.shap_example import shap_test
+from text_lime.text_classifier import legal_text_lime
 
 
 def setup_logging():
@@ -22,8 +25,11 @@ def setup_logging():
 def main():
     setup_logging()
     # legal_text_lime()
-    #process_attrib()
-    jec_lime_regression()
+    # process_attrib()
+    # jec_lime_regression()
+    # shap_test()
+    #example_dice()
+    jec_dice_2()
 
 
 if __name__ == '__main__':
